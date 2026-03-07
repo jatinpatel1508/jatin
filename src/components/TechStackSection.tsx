@@ -4,7 +4,7 @@ import { useRef } from "react";
 const categories = [
   {
     title: "Backend",
-    items: ["PHP", "Laravel", "CodeIgniter", "Node.js", "REST APIs", "JWT Auth"],
+    items: ["PHP", "Laravel", "CodeIgniter", "CakePHP", "Node.js", "REST APIs", "JWT Auth"],
   },
   {
     title: "Frontend",

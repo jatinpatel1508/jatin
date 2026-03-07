@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 230 25% 7%;
+    --foreground: 220 20% 92%;
+
+    --card: 230 20% 12%;
+    --card-foreground: 220 20% 92%;
+
+    --popover: 230 20% 12%;
+    --popover-foreground: 220 20% 92%;
+
+    --primary: 220 90% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 60% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 230 15% 18%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 270 60% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 230 15% 20%;
+    --input: 230 15% 20%;
+    --ring: 220 90% 56%;
+
+    --radius: 0.75rem;
+
+    --neon-blue: 220 90% 56%;
+    --neon-purple: 270 60% 55%;
+    --neon-cyan: 190 90% 50%;
+    --glass: 230 20% 14%;
+    --glass-border: 230 15% 25%;
+
+    --font-display: 'Orbitron', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --gradient-neon: linear-gradient(135deg, hsl(220 90% 56%), hsl(270 60% 55%));
+    --gradient-bg: linear-gradient(180deg, hsl(230 25% 5%), hsl(230 25% 10%), hsl(250 20% 8%));
+    --shadow-neon: 0 0 20px hsl(220 90% 56% / 0.3), 0 0 40px hsl(270 60% 55% / 0.15);
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.4);
+
+    --sidebar-background: 230 20% 10%;
+    --sidebar-foreground: 220 20% 92%;
+    --sidebar-primary: 220 90% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 60% 55%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 230 15% 20%;
+    --sidebar-ring: 220 90% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+}
+
+@layer components {
+  .border-glass-border {
+    border-color: hsl(var(--glass-border));
+  }
+
+  .glass-card {
+    @apply relative overflow-hidden rounded-xl border border-glass-border;
+    background: hsl(var(--glass) / 0.6);
+    backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-card);
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300;
+  }
+
+  .glass-card-hover:hover {
+    transform: translateY(-4px);
+    border-color: hsl(var(--neon-blue) / 0.5);
+    box-shadow: var(--shadow-neon), var(--shadow-card);
+  }
+
+  .gradient-text {
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-underline {
+    @apply relative inline-block;
+  }
+  .gradient-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 h-0.5 w-full;
+    background: var(--gradient-neon);
+    animation: underline-glow 2s ease-in-out infinite;
+  }
+
+  .btn-neon {
+    @apply relative inline-flex items-center justify-center rounded-lg px-6 py-3 font-semibold transition-all duration-300;
+    background: var(--gradient-neon);
+    color: hsl(var(--primary-foreground));
+    box-shadow: 0 0 15px hsl(var(--neon-blue) / 0.3);
+  }
+  .btn-neon:hover {
+    box-shadow: 0 0 25px hsl(var(--neon-blue) / 0.5), 0 0 50px hsl(var(--neon-purple) / 0.2);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline-neon {
+    @apply relative inline-flex items-center justify-center rounded-lg border px-6 py-3 font-semibold transition-all duration-300;
+    border-color: hsl(var(--neon-blue) / 0.5);
+    color: hsl(var(--foreground));
+  }
+  .btn-outline-neon:hover {
+    border-color: hsl(var(--neon-blue));
+    background: hsl(var(--neon-blue) / 0.1);
+    box-shadow: 0 0 15px hsl(var(--neon-blue) / 0.2);
+  }
+
+  .floating-particle {
+    @apply absolute rounded-full;
+    background: hsl(var(--neon-blue) / 0.15);
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .section-padding {
+    @apply px-4 py-20 sm:px-6 lg:px-8;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  33% { transform: translateY(-20px) translateX(10px); }
+  66% { transform: translateY(10px) translateX(-10px); }
+}
+
+@keyframes underline-glow {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px hsl(var(--neon-blue) / 0.3); }
+  50% { box-shadow: 0 0 20px hsl(var(--neon-blue) / 0.5); }
+}

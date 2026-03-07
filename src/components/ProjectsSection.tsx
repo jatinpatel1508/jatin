@@ -1,25 +1,32 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ExternalLink, Github } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const projects = [
   {
-    title: "HRMS SaaS Platform",
+    title: "Mini JavaScript Games",
     description:
-      "Multi-tenant employee management system with role-based access, time tracking, and analytics dashboard.",
-    tech: ["Node.js", "PostgreSQL", "React"],
+      "A collection of small interactive games built using JavaScript and React to demonstrate UI logic, state management, and browser-based game mechanics.",
+    tech: ["React", "state", "logic", "UX", "Grid"],
+    gitHubLink: "https://github.com/jatinpatel1508",
+    routeLink: "/games"
   },
   {
-    title: "Analytics Dashboard",
+    title: "SaaS Projects",
     description:
       "Real-time analytics dashboard with API aggregation and data visualization.",
     tech: ["Laravel", "MySQL", "ChartJS"],
+    gitHubLink: "https://github.com/jatinpatel1508",
+    routeLink: "/saas-demo"
   },
   {
     title: "Enterprise REST API System",
     description:
       "High-performance REST API with JWT authentication and optimized database queries.",
     tech: ["Node.js", "PostgreSQL"],
+    gitHubLink: "https://github.com/jatinpatel1508",
+    routeLink: ""
   },
 ];
 
@@ -73,18 +80,19 @@ const ProjectsSection = () => {
                   ))}
                 </div>
                 <div className="flex gap-3">
-                  <a
-                    href="#"
+                  <Link
+                    to={project.gitHubLink}
+                    target="_blank"
                     className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
                   >
                     <Github size={14} /> GitHub
-                  </a>
-                  <a
-                    href="#"
+                  </Link>
+                  <Link
+                    to={project.routeLink}
                     className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
                   >
                     <ExternalLink size={14} /> Live Demo
-                  </a>
+                  </Link>
                 </div>
               </motion.div>
             ))}
