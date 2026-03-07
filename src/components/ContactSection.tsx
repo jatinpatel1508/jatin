@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Mail, Linkedin, Github, Send } from "lucide-react";
+import { Mail, Linkedin, Github, Send, Chrome } from "lucide-react";
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -59,6 +59,16 @@ const ContactSection = () => {
                   </div>
                   GitHub
                 </a>
+                <a
+                  href="https://pateljatink.wordpress.com/"
+                  target="_blank"
+                  className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors group"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <Chrome size={18} className="group-hover:text-primary" />
+                    </div>
+                    Website
+                  </a>
               </div>
             </div>
 
