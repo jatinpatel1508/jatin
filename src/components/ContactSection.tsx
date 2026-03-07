@@ -31,16 +31,17 @@ const ContactSection = () => {
               </p>
               <div className="space-y-4">
                 <a
-                  href="mailto:jatin@example.com"
+                  href="mailto:patel.jatin.k@gmail.com"
                   className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors group"
                 >
                   <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                     <Mail size={18} className="group-hover:text-primary" />
                   </div>
-                  jatin@example.com
+                  patel.jatin.k@gmail.com
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/patel-jatin-k"
+                  target="_blank"
                   className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors group"
                 >
                   <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -49,7 +50,8 @@ const ContactSection = () => {
                   LinkedIn
                 </a>
                 <a
-                  href="#"
+                  href="https://github.com/jatinpatel1508"
+                  target="_blank"
                   className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors group"
                 >
                   <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center group-hover:bg-primary/20 transition-colors">
