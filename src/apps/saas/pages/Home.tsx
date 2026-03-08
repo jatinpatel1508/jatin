@@ -1,8 +1,8 @@
-import "../styles/game.css";
+import "../styles/saas.css";
 import HeroSection from "../components/HeroSection";
-import GamesGrid from "../components/GamesGrid";
-import FeaturedGame from "../components/FeaturedGame";
-import TechSection from "../components/TechSection";
+import ProjectsSection from "../components/ProjectsSection";
+import ArchitectureSection from "../components/ArchitectureSection";
+import ApproachSection from "../components/ApproachSection";
 import CTASection from "../components/CTASection";
 import Footer from "../components/Footer";
 
@@ -10,9 +10,9 @@ const Home = () => {
     return(
         <div className="min-h-screen" style={{ background: 'var(--gradient-bg)' }}>
             <HeroSection />
-            <GamesGrid />
-            <FeaturedGame />
-            <TechSection />
+            <ProjectsSection />
+            <ArchitectureSection />
+            <ApproachSection />
             <CTASection />
             <Footer />
         </div>

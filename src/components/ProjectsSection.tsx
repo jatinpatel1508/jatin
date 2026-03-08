@@ -18,7 +18,7 @@ const projects = [
       "Real-time analytics dashboard with API aggregation and data visualization.",
     tech: ["Laravel", "MySQL", "ChartJS"],
     gitHubLink: "https://github.com/jatinpatel1508",
-    routeLink: "/saas-demo"
+    routeLink: "/saas-demo/"
   },
   {
     title: "Enterprise REST API System",
